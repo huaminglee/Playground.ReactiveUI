@@ -1,0 +1,14 @@
+object IViewFor.ViewModel
+{
+    get { return ViewModel; }
+    set { ViewModel = ($TYPE$Model)value; }
+}
+
+public $TYPE$Model ViewModel
+{
+    get { return ($TYPE$Model)GetValue(ViewModelProperty); }
+    set { SetValue(ViewModelProperty, value); }
+}
+
+public static readonly DependencyProperty ViewModelProperty =
+    DependencyProperty.Register("ViewModel", typeof($TYPE$Model), typeof(ShellView));
